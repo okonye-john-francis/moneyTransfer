@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+         $all_system_users_from_db = User::all()->where('id', '<>', Auth::user()->id)->toArray();
+        return view('layouts.adminIndex',compact('all_system_users_from_db'));
     }
 }
