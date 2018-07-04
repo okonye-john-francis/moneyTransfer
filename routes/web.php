@@ -19,5 +19,11 @@ Route::get('/admin', 'HomeController@index');
 
 Route::get('/systemUsers', 'SystemUsersController@get_all_system_users');
 
-Route::get('/{id}/moreDetails', 'SystemUsersController@get_all_contacts_for_selected_user');
+Route::get('/{id}/moreDetails', 'SystemUsersController@get_all_details_for_selected_user');
+
+Route::get('/{id}/blockUser', 'SystemUsersController@block_selected_user');
+
+Route::get('/{id}/accounts', 'SystemUsersController@get_all_accounts_for_selected_contact');
+
+
 

@@ -28,7 +28,7 @@
                                     <td>{{$row['phonenumber']}}</td>
                                     <td>{{$row['country']}}</td>
                                     <td>{{$row['email']}}</td>
-                                    <td><a href="{{action('SystemUsersController@get_all_contacts_for_selected_user',$row['id'])}}">
+                                    <td><a href="{{action('SystemUsersController@get_all_details_for_selected_user',$row['id'])}}">
                                         <button type="button" class="btn btn-outline-primary">More Info</button>
                                         </a>
                                     </td>
