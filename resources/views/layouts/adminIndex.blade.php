@@ -95,13 +95,13 @@
                         <!-- /input-group -->
                     </li>
                     <li class="list-group-item">
-                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li class="list-group-item">
                         <a href="{{action('SystemUsersController@get_all_system_users')}}"><i class="fa fa-table fa-fw"></i>System Users(45)</a>
                     </li>
                      <li class="list-group-item">
-                        <a href="tables.html"><i class="fa fa-table fa-fw"></i>All Transactions</a>
+                        <a href="#"><i class="fa fa-table fa-fw"></i>All Transactions</a>
                     </li>
                    
                     
