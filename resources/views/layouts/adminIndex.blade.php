@@ -64,7 +64,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user fa-fw"></i>
+                    {{ 'Your logged in as '. Auth::user()->lname }}&nbsp<i class="fa fa-user fa-fw"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-user">
                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -122,49 +122,7 @@
                 <div class="col-lg-12">
                     <div class="row">
 
-                        <!-- Contact list table-->
-               
-                <div class="col-xl-12">
-                    <div class="card">
-                        <div class="card-header" style="text-align: center;">System Users</div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover"
-                                   id="dataTables-example">
-                                <thead>
-                                <tr>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Phone Number</th>
-                                    <th>Country</th>
-                                    <th>Email</th>
-                                    <th>More Details</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($all_system_users_from_db as $row)
-                                <tr>
-                                    <td>{{$row['fname']}}</td>
-                                    <td>{{$row['lname']}}</td>
-                                    <td>{{$row['phonenumber']}}</td>
-                                    <td>{{$row['country']}}</td>
-                                    <td>{{$row['email']}}</td>
-                                    <td><button type="button" class="btn btn-outline-primary">More Info</button></td>
-                                </tr>
-                                @endforeach
-                                                        
-                                </tbody>
-                            </table>
-                            <!-- /.table-responsive -->
-                          
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-xl-12 -->
-
-            <!--/ Contact list table -->
+              
                         @yield('content')
 
 

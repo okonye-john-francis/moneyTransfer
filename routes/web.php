@@ -16,5 +16,8 @@ Route::get('/', 'HomeController@index');
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index');
+
 Route::get('/systemUsers', 'SystemUsersController@get_all_system_users');
+
+Route::get('/{id}/moreDetails', 'SystemUsersController@get_all_contacts_for_selected_user');
 

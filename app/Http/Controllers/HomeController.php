@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-         $all_system_users_from_db = User::all()->where('id', '<>', Auth::user()->id)->toArray();
-        return view('layouts.adminIndex',compact('all_system_users_from_db'));
+       
+        return view('layouts.adminIndex');
     }
 }
