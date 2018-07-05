@@ -61,13 +61,20 @@
 
         <ul class="nav navbar-nav ml-md-auto flex-row navbar-top-links">
         
-            <li class="nav-item dropdown">
+             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user fa-fw"></i>
+                    {{ 'Your logged in as '. Auth::user()->lname }}&nbsp<i class="fa fa-user fa-fw"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-user">
-                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                        </form>
+                    </a>
                 </div>
             </li>
         </ul>
@@ -119,171 +126,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
-
-                         <!-- create contact form  -->
-                        <div class="col-xl-12">
-                            <div class="card">
-                                <div class="card-header" style="text-align: center !important;">Create your Transaction Account(s)</div>
-                                    <div class="card-body">
-                                        <table style="width: 100%;">
-                                            <tr>
-                                                <td class="tdstyle">Account Name</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <input class="form-control" style="display: inline !important;">
-                                         </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tdstyle">Account Type</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <select class="form-control" style="display: inline !important;">
-                                            <option>Select Account Type</option>
-                                            <option>Mobile Money</option>
-                                            <option>Bank Account</option>
-                                        </select>
-                                         </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tdstyle">Account Number</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <input class="form-control" style="display: inline !important;">
-                                         </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td><button type="button" class="btn btn-primary btn-lg">Create Account</button></td>
-                                            </tr>
-                                        </table>
-                                         
-                                         
-                                         
-                                       </div>
-                                  </div>
-                             </div>
-                            <!-- /create account form  -->
-
-                    <!--  create contact form  -->
-                     <div class="col-xl-12">
-                            <div class="card">
-                                <div class="card-header" style="text-align: center !important;">Create your Contact</div>
-                                    <div class="card-body">
-                                        <table style="width: 100%;">
-                                            <tr>
-                                                <td class="tdstyle">First Name</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <input class="form-control" style="display: inline !important;">
-                                         </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tdstyle">Last Name</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <input class="form-control" style="display: inline !important;">
-                                         </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tdstyle">Phone Number</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <input class="form-control" style="display: inline !important;">
-                                         </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tdstyle">Country</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <select class="form-control" style="display: inline !important;">
-                                            <option>Select Country</option>
-                                            <option>Mobile Money</option>
-                                            <option>Bank Account</option>
-                                        </select>
-                                         </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tdstyle">Email (optional)</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <input class="form-control" style="display: inline !important;">
-                                         </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td><button type="button" class="btn btn-primary btn-lg">Add Contact</button></td>
-                                            </tr>
-                                        </table>
-                                         
-                                         
-                                         
-                                       </div>
-                                  </div>
-                             </div>
-                         <!-- / create contact form  -->
-
-                         <!-- Send money form  -->
-                        <div class="col-xl-12">
-                            <div class="card">
-                                <div class="card-header" style="text-align: center !important;">Send Money</div>
-                                    <div class="card-body">
-                                        <table style="width: 100%;">
-                                            <tr>
-                                                <td class="tdstyle">Sender Account</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <select class="form-control" style="display: inline !important;">
-                                            <option>Select account your sending from</option>
-                                            <option>Mobile Money</option>
-                                            <option>Bank Account</option>
-                                        </select>
-                                         </div>
-                                                </td>
-                                            </tr>
-                                          
-                                            <tr>
-                                                <td class="tdstyle">Reciever Account</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <input class="form-control" style="display: inline !important;">
-                                         </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tdstyle">Enter Account</td>
-                                                <td>
-                                                    <div class="form-group"> 
-                                        <input class="form-control" style="display: inline !important;">
-                                         </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td><button type="button" class="btn btn-primary btn-lg">Send Money</button></td>
-                                            </tr>
-                                        </table>
-                                         
-                                                        
-                                       </div>
-                                  </div>
-                             </div>
-                            <!-- /Send money form  -->
-
-
-                            <!-- Contact list table-->
-               
-
-
-
-                            <!--/ Contact list table -->
+      
+                             @yield('content')
 
                         
                         </div> 

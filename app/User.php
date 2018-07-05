@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Auth;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+     public static function isAdmin()
+    {
+        $logged_in_user = 'admin@admin.com';
+        if(Auth::User()->email ==$logged_in_user)
+        return true;
+        else return false;
+        
+    }
+
+
+
 }

@@ -25,7 +25,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-       
-        return view('layouts.adminIndex');
+        $false = 0;
+       if (Auth::User()->is_active == $false) {
+           return view('userpages.blockedUser');
+       }
+       elseif (Auth::User()->email == 'admin@admin.com') {
+           return view('layouts.adminindex');
+       }
+       elseif (Auth::User()->email != 'admin@admin.com') {
+           return view('userpages.sendMoney');
+       }
+        
     }
 }

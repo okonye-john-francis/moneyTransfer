@@ -25,5 +25,7 @@ Route::get('/{id}/blockUser', 'SystemUsersController@block_selected_user');
 
 Route::get('/{id}/accounts', 'SystemUsersController@get_all_accounts_for_selected_contact');
 
+Route::get('/home', 'HomeController@index');
+
 
 

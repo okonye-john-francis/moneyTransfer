@@ -53,8 +53,7 @@
             <a class="" href="#">Money Transfer System</a>
             <button class="collapsed ml-auto navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#side-menu-wrapper" aria-controls="side-menu" aria-expanded="false"
-                    aria-label="Toggle navigation" style="
-">
+                    aria-label="Toggle navigation" style="">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
@@ -80,7 +79,7 @@
         </ul>
     </header>
     <div class="d-md-flex">
-        <div class="sidebar" role="navigation" style="background: #FFFF !important;">
+        <div class="sidebar" role="navigation" >
             <div class="sidebar-nav collapse navbar-collapse show" id="side-menu-wrapper">
                 <ul class="nav navbar-nav navbar-collapse flex-column side-nav list-group" id="side-menu">
                     <li class="sidebar-search">
@@ -150,10 +149,6 @@
 <!-- Metis Menu Plugin JavaScript -->
 <script src="{{ URL::asset('vendor/metisMenu/metisMenu.min.js') }}"></script>
 
-<!-- Morris Charts JavaScript -->
-<script src="{{ URL::asset('vendor/raphael/raphael.min.js') }}"></script>
-<script src="{{ URL::asset('vendor/morrisjs/morris.min.js') }}"></script>
-<script src="{{ URL::asset('data/morris-data.js') }}"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ URL::asset('dist/js/sb-admin-2.js') }}"></script>
@@ -162,20 +157,14 @@
 <script src="{{ URL::asset('vendor/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ URL::asset('vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
 
-
-<script>
-   
-    $(document).ready(function () {
+<script type="text/javascript">
+     $(document).ready(function () {
         $('#dataTables-example').DataTable({
             responsive: true,
             drawCallback: function () {
                 $('#dataTables-example_wrapper .row:last-child').addClass('mb-1 align-items-baseline');
             }
         });
-    });
-
-    $('#allTrans').on('click',function () {
-        alert("Ughhhhhhhhhh");
     });
 </script>
 
