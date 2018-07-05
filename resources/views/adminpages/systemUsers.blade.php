@@ -2,14 +2,13 @@
 
 @section('content')
 
- <!-- Contact list table-->
-               
+ <!-- Contact list table-->               
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header" style="text-align: center;">System Users</div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table width="100%" class="table table-striped table-bordered able-hover" id="dataTables-example">
+                            <table width="100%" class="table table-striped table-bordered" id="dataTables-example">
                                 <thead>
                                 <tr>
                                     <th>First Name</th>

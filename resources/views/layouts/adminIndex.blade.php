@@ -101,7 +101,7 @@
                         <a href="{{action('SystemUsersController@get_all_system_users')}}"><i class="fa fa-table fa-fw"></i>System Users(45)</a>
                     </li>
                      <li class="list-group-item">
-                        <a href="#"><i class="fa fa-table fa-fw"></i>All Transactions</a>
+                        <a href="#" id="allTrans"><i class="fa fa-table fa-fw"></i>All Transactions</a>
                     </li>
                    
                     
@@ -164,6 +164,7 @@
 
 
 <script>
+   
     $(document).ready(function () {
         $('#dataTables-example').DataTable({
             responsive: true,
@@ -171,6 +172,10 @@
                 $('#dataTables-example_wrapper .row:last-child').addClass('mb-1 align-items-baseline');
             }
         });
+    });
+
+    $('#allTrans').on('click',function () {
+        alert("Ughhhhhhhhhh");
     });
 </script>
 

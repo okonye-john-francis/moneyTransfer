@@ -73,7 +73,7 @@
                         <td>{{$row['country']}}</td>
                         <td>{{$row['email']}}</td>
                         <td><a href="{{action('SystemUsersController@get_all_accounts_for_selected_contact',$row['id'])}}">
-                            <button type="button" class="btn btn-outline-primary">More Info</button>
+                            <button type="button" class="btn btn-outline-primary">Accounts Owned</button>
                             </a>
                         </td>
                     </tr>
