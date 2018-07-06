@@ -177,6 +177,14 @@
     });
 </script>
 
+ <script type="text/javascript">
+          $('#profile-tab').on('click',function(){
+            var enteredName = document.getElementById('recipientName').value;
+            document.getElementById('regPhoneName').value = enteredName;        
+
+             });
+</script>
+
 
 </body>
 

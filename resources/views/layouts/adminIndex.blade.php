@@ -100,7 +100,7 @@
                         <a href="{{action('SystemUsersController@get_all_system_users')}}"><i class="fa fa-table fa-fw"></i>System Users(45)</a>
                     </li>
                      <li class="list-group-item">
-                        <a href="#" id="allTrans"><i class="fa fa-table fa-fw"></i>All Transactions</a>
+                        <a href="{{action('AllTransactionsController@get_all_transactions')}}" id="allTrans"><i class="fa fa-table fa-fw"></i>All Transactions</a>
                     </li>
                    
                     
@@ -159,13 +159,27 @@
 
 <script type="text/javascript">
      $(document).ready(function () {
-        $('#dataTables-example').DataTable({
+        $('#dataTables-example,#dataTables-example2').DataTable({
             responsive: true,
             drawCallback: function () {
                 $('#dataTables-example_wrapper .row:last-child').addClass('mb-1 align-items-baseline');
             }
         });
     });
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $("#endDate").change(function(){
+        var startDate = document.getElementById('startDate').value;
+        var endDate = document.getElementById('endDate').value;
+        $.ajax({url: "/transactionRange?lower_limit="+startDate+"&upper_limit="+endDate, success: function(result){
+            $("#transactionRange").html(result);
+        }});
+    });
+});
+
 </script>
 
 

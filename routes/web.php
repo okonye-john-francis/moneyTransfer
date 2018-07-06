@@ -27,5 +27,10 @@ Route::get('/{id}/accounts', 'SystemUsersController@get_all_accounts_for_selecte
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/allTransactions', 'AllTransactionsController@get_all_transactions');
+Route::post('/allTransactions', 'AllTransactionsController@get_some_transactions');
+
+//Route::get('/transactionRange', 'AllTransactionsController@get_range_of_requested_transactions')
+
 
 

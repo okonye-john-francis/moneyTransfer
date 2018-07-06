@@ -27,6 +27,7 @@ class HomeController extends Controller
     {
         $false = 0;
        if (Auth::User()->is_active == $false) {
+           Auth::logout();
            return view('userpages.blockedUser');
        }
        elseif (Auth::User()->email == 'admin@admin.com') {
